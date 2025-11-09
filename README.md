@@ -17,8 +17,16 @@
 # 安装jupyter
 pip3 install jupyter
 
-# 进入项目下的jupter目录,启动jupyter服务器.访问地址http://localhost:8888/tree
+# 进入项目下的jupyter目录,启动jupyter服务器.访问地址http://localhost:8888/tree
 jupyter notebook
+```
+
+### C++ 使用指南
+
+```bash
+# 编译并运行
+g++ -std=c++17 -O2 -pipe -Wall -Wextra your_file.cpp -o your_file
+./your_file
 ```
 
 ## 备注
@@ -31,6 +39,14 @@ class ListNode:
     def __init__(self, x):
         self.val = x
         self.next = None
+```
+- 链表节点的定义（C++）：
+```cpp
+struct ListNode {
+    int val;
+    ListNode* next;
+    explicit ListNode(int x) : val(x), next(nullptr) {}
+};
 ```
 - 相关的公共放在了`jupyter/common`目录，引入方式如下：
 ```python
@@ -55,7 +71,7 @@ sys.path.insert(0, os.path.abspath('./common'))
 | 1.9    | [**字符串轮转**](https://github.com/panxl6/cc150/blob/master/markdown/1.9%20字符串轮转.md)  | 假定有一种 isSubstring 方法,可检查一个单词是否为其他字符串的子串。给定两个字符串 s1 和 s2 ,请编写代码检查 s2 是否为 s1 旋转而成,要求只能调用一次isSubstring (比如, waterbottle 是 erbottlewat 旋转后的字符串)。 |
 |        | | <h4>链表<h4> |
 | 2.1    | [**移除重复节点**](https://github.com/panxl6/cc150/blob/master/markdown/2.1%20移除重复节点.md)  | 编写代码，移除未排序链表中的重复节点。<br> *进阶：* 如果不得使用临时缓冲区，该怎么解决？ |
-| 2.2    | [**返回l倒数第k个节点**](https://github.com/panxl6/cc150/blob/master/markdown/2.2%20返回倒数第k个节点.md)  | 实现一种算法，找出单向链表中倒数第k 个节点。 |
+| 2.2    | [**返回倒数第k个节点**](https://github.com/panxl6/cc150/blob/master/markdown/2.2%20返回倒数第k个节点.md)  | 实现一种算法，找出单向链表中倒数第k 个节点。 |
 | 2.3    | [**删除中间节点**](https://github.com/panxl6/cc150/blob/master/markdown/2.3%20删除中间节点.md)  | 实现一种算法，删除单向链表中间的某个节点（除了第一个和最后一个节点，不一定是中间节点），假定你只能访问该节点。<br> *示例：* <br> *输入：*  单向链表a->b->c->d->e->f 中的节点c <br> *结果：* 不返回任何数据，但该链表变为a->b->d->e->f |
 | 2.4    | [**分割链表**](https://github.com/panxl6/cc150/blob/master/markdown/2.4%20分割链表.md)  | 编写程序以x 为基准分割链表，使得所有小于x 的节点排在大于或等于x 的节点之前。如果链表中包含x，x 只需出现在小于x 的元素之前（如下所示）。分割元素x只需处于“右半部分”即可，其不需要被置于左右两部分之间。<br> 示例：<br>输入：3 -> 5 -> 8-> 5 -> 10 -> 2 -> 1 [分节点为5] <br>输出：3 -> 1 -> 2 -> 10 -> 5-> 5 -> 8 |
 | 2.5    | [**链表求和**](https://github.com/panxl6/cc150/blob/master/markdown/2.5%20链表求和.md)  | 给定两个用链表表示的整数，每个节点包含一个数位。这些数位是反向存放的，也就是个位排在链表首部。编写函数对这两个整数求和，并用链表形式返回结果。 <br>示例：<br> 输入：(7-> 1 -> 6) + (5 -> 9 -> 2)，即617 + 295 <br>输出：2 -> 1 -> 9，即912 <br> 进阶：假设这些数位是正向存放的，请再做一遍。 <br><br>示例：<br>输入：(6 -> 1 -> 7) + (2 -> 9 -> 5)，即617 + 295 <br> 输出：9 -> 1 -> 2，即912|
@@ -117,7 +133,7 @@ sys.path.insert(0, os.path.abspath('./common'))
 | 7.12    | **散列表**  | 设计并实现一个散列表，使用链接（即链表）处理碰撞冲突。 |
 |  | | <h4>递归与动态规划<h4> |
 | 8.1    | **三步问题**  | 有个小孩正在上楼梯,楼梯有 n 阶台阶,小孩一次可以上 1 阶、2 阶或 3 阶。实现一种方法,计算小孩有多少种上楼梯的方式。 |
-| 8.２    | **迷路的机器人**  | 设想有个机器人坐在一个网格的左上角,网格 r 行 c 列。机器人只能向下或向右移动,但不能走到一些被禁止的网格。设计一种算法,寻找机器人从左上角移动到右下角的路径。 |
+| 8.2    | **迷路的机器人**  | 设想有个机器人坐在一个网格的左上角,网格 r 行 c 列。机器人只能向下或向右移动,但不能走到一些被禁止的网格。设计一种算法,寻找机器人从左上角移动到右下角的路径。 |
 | 8.3   | **魔术索引**  | 在数组 A[0...n-1] 中,有所谓的魔术索引,满足条件 A[i] = i 。给定一个有序整数数组,元素值各不相同,编写一种方法找出魔术索引,若有的话,在数组 A 中找出一个魔术索引。<br> 进阶:如果数组元素有重复值,又该如何处理呢? |
 | 8.4    | **幂集**  | 编写一种方法,返回某集合的所有子集。 |
 | 8.5    | **递归乘法**  | 写一个递归函数,不使用 * 运算符, 实现两个正整数的相乘。可以使用加号、减号、位移,但要吝啬一些。 |
@@ -240,7 +256,7 @@ sys.path.insert(0, os.path.abspath('./common'))
 ## 系统设计
 todo
 
-## 一个OnlineJuge的实现思路
+## 一个OnlineJudge的实现思路
 
 ## 面向对象
 
